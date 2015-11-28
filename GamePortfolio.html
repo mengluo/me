@@ -266,7 +266,7 @@
 </div>
 				
 		   <div class="videopageheader">		   
-		      <a href="index.html" class="biliboard electronic">HOME</a>
+		      <a href="index.html" id="home" class="biliboard electronic">HOME</a>
            </div>
 		   
 		<div class="container">	
@@ -461,12 +461,14 @@
            {
 	            		console.log("smaller");
 						isLarger = false;
+						$("#home").css('left','35%');
                        
            }
 	       if (window.matchMedia('(min-width: 768px)').matches)
            {
 	            		console.log("larger");
 						isLarger = true;
+						$("#home").css('left','45%');
 						
 	            		
 	       }
@@ -489,8 +491,11 @@
                     {
 	            		console.log("smaller");
 						isLarger = false;
-						lastArrow.hide();
+						if(typeof lastArrow !='undefined'){
+						 lastArrow.hide();
+						}
 			            $(lastTargetId).hide();
+						$("#home").css('left','35%');
                        
                     }
 	            	if (window.matchMedia('(min-width: 768px)').matches)
@@ -498,6 +503,7 @@
 	            		console.log("larger");
 						isLarger = true;
 						lastCover.hide();
+						$("#home").css('left','45%');
 	            		
 	            	}
 	            	
