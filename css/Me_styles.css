@@ -322,22 +322,40 @@ a.biliboard {
 	font-weight: bold;
 }
 
-a.unity{
+a.unity-l{
  	top: 350px;
 	left:20%;
 	font-size: 20px;
 }
 
-a.me{
+a.me-l{
  	top: 350px;
 	left:45%;
 	font-size: 20px;
 }
 
-a.memories{
+a.memories-l{
  	top: 350px;
 	left:70%;
 	font-size: 20px;
+}
+
+a.unity-s{
+ 	top: 320px;
+	left:45%;
+
+}
+
+a.me-s{
+ 	top: 390px;
+	left:45%;
+
+}
+
+a.memories-s{
+ 	top: 460px;
+	left:45%;
+
 }
 
 .biliboard:hover {

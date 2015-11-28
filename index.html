@@ -24,9 +24,9 @@
 		<div class="container">	
 
 
-		      <a href="GamePortfolio.html" class="unity button homepagebtn">Games</a>
-			  <a href="index.html" class="me button homepagebtn">Me</a>
-			  <a href="index.html" class="memories button homepagebtn">Memories</a>
+		      <a href="GamePortfolio.html" id="unity" class="unity-s button homepagebtn">Games</a>
+			  <a href="index.html" id="me" class="me-s button homepagebtn">Me</a>
+			  <a href="index.html" id="memories" class="memories-s button homepagebtn">Memories</a>
 
 
 			<div class="row footer homepagefooter">
@@ -251,21 +251,21 @@
 	        });	
 
           function electricButton(){
-		     var unityBtnClass = "unity biliboard electronic",
-			     meBtnClass = "me biliboard electronic",
-			     memoBtnClass = "memories biliboard electronic";
-		     $("div.container >a.unity").attr('class', unityBtnClass);
-			 $("div.container >a.me").attr('class', meBtnClass);
-			 $("div.container >a.memories").attr('class', memoBtnClass);
+		     var unityBtnClass = "unity-l biliboard electronic",
+			     meBtnClass = "me-l biliboard electronic",
+			     memoBtnClass = "memories-l biliboard electronic";
+		     $("div.container >#unity").attr('class', unityBtnClass);
+			 $("div.container >#me").attr('class', meBtnClass);
+			 $("div.container >#memories").attr('class', memoBtnClass);
 		  }
 
           function normalButton(){
-		     var unityBtnClass = "unity button homepagebtn",
-			     meBtnClass = "me button homepagebtn",
-			     memoBtnClass = "memories button homepagebtn";
-		     $("div.container >a.unity").attr('class', unityBtnClass);
-			 $("div.container >a.me").attr('class', meBtnClass);
-			 $("div.container >a.memories").attr('class', memoBtnClass);
+		     var unityBtnClass = "unity-s button homepagebtn",
+			     meBtnClass = "me-s button homepagebtn",
+			     memoBtnClass = "memories-s button homepagebtn";
+		     $("div.container >#unity").attr('class', unityBtnClass);
+			 $("div.container >#me").attr('class', meBtnClass);
+			 $("div.container >#memories").attr('class', memoBtnClass);
 		  }			  
         </script>		
 	</body>
