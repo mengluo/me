@@ -33,10 +33,7 @@
 			 Copyright &copy; 2015, Meng Luo (mluo.bupt [at] gmail.com). All rights reserved.
 			</div>
 		</div><!-- /container -->
-		
-
-		
-		
+	
 
         <!-- ---------------- Custom Shader Code ------------------------ -->
         <script id="vertexShader" type="x-shader/x-vertex">
@@ -217,31 +214,41 @@
 
 		</script>
         <script>
-        if (window.matchMedia('(max-width: 768px)').matches){
+			$('header >div.avatar >img').mouseover(function (){
+		         $(this).attr("src","pics/Avatar_Hover.png");
+		
+	        });
+	
+	        $('header >div.avatar >img').mouseleave(function (){
+		         $(this).attr("src","pics/Avatar.png");
+		
+	        });
+			   
+            if (window.matchMedia('(max-width: 768px)').matches){
         	        console.log("smaller");
         			normalButton()
                                
-         }
-      	 if (window.matchMedia('(min-width: 768px)').matches){
+            }
+      	    if (window.matchMedia('(min-width: 768px)').matches){
       	       		console.log("larger");
       	            electricButton()
    	       		
-        }
-		
-	    $(window).resize(function(){
-	    	if (window.matchMedia('(max-width: 768px)').matches)
-            {
-	    		console.log("smaller");
-				normalButton()
-               
             }
-	    	if (window.matchMedia('(min-width: 768px)').matches)
-            {
-	    		console.log("larger");
-				electricButton()
+		
+	        $(window).resize(function(){
+	    	    if (window.matchMedia('(max-width: 768px)').matches)
+                {
+	    		   console.log("smaller");
+				   normalButton()
+               
+                }
+	    	   if (window.matchMedia('(min-width: 768px)').matches)
+               {
+	    		   console.log("larger");
+				   electricButton()
 	    		
-	    	}
-	      });	
+	    	   }
+	        });	
 
           function electricButton(){
 		     var unityBtnClass = "unity biliboard electronic",
