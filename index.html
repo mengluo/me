@@ -23,9 +23,10 @@
 
 		<div class="container">	
 
-		      <a href="GamePortfolio.html" class="unity biliboard electronic">Games</a>
-			  <a href="index.html" class="me biliboard electronic">Me</a>
-			  <a href="index.html" class="memories biliboard electronic">Memories</a>
+
+		      <a href="GamePortfolio.html" class="unity button homepagebtn">Games</a>
+			  <a href="index.html" class="me button homepagebtn">Me</a>
+			  <a href="index.html" class="memories button homepagebtn">Memories</a>
 
 
 			<div class="row footer homepagefooter">
@@ -35,140 +36,7 @@
 		
 
 		
-		<script src="js/grid.js"></script>
-		<script>
-		   var isLarger = true;
-           var last, lastTargetId, lastArrow;
-		   var lastTopOffset = -99999;
-		   if (window.matchMedia('(max-width: 768px)').matches)
-           {
-	            		console.log("smaller");
-						isLarger = false;
-                       
-           }
-	       if (window.matchMedia('(min-width: 768px)').matches)
-           {
-	            		console.log("larger");
-						isLarger = true;
-	            		
-	       }
-           $("div.container >div.main").css("top",$(window).height());
-		   
-		   
-		       $('header >div.avatar >img').mouseover(function (){
-		         $(this).attr("src","pics/Avatar_Hover.png");
 		
-	           });
-	
-	           $('header >div.avatar >img').mouseleave(function (){
-		         $(this).attr("src","pics/Avatar.png");
-		
-	           });
-
-					
-	            $(window).resize(function(){
-	            	if (window.matchMedia('(max-width: 768px)').matches)
-                    {
-	            		console.log("smaller");
-						isLarger = false;
-						lastArrow.hide();
-			            $(lastTargetId).hide();
-                       
-                    }
-	            	if (window.matchMedia('(min-width: 768px)').matches)
-                    {
-	            		console.log("larger");
-						isLarger = true;
-	            		
-	            	}
-	            	
-	            });
-				
-
-	 	 
-           $("div.container >div.content >div.main >div.row >div.Cell >div.thumbnail >a.pic").on('click', function(event){
-			  event.preventDefault();
-			 if(isLarger){
-			  var imgSrc = $(this).find('img').attr('src');
-			  var buttonLink = $(this).find('img').attr('data-link');
-			  var description = $(this).find('img').attr('data-alt');
-			  var title = $(this).find('img').attr('data-title');
-			  var targetId = $(this).attr('data-target');
-			  console.log("!!!!!!!!!!!!!!!!"+buttonLink);
-			  $(targetId).find("div.previewPanel >div.subPanel1 >div.thumbnail >img").fadeOut(150,function(){
-			         $(this).attr("src",imgSrc);
-			  }).fadeIn(150);
-			  $(targetId).find("div.previewPanel >div.subPanel2 >div.thumbnail >div.caption").find("h3").html(title);
-			  $(targetId).find("div.previewPanel >div.subPanel2 >div.thumbnail >div.caption").find("p").html(description);
-			  $(targetId).find("div.previewPanel >div.subPanel2 >div.thumbnail >div.caption").find("a").attr('href',buttonLink);
-			  
-			  if(lastArrow){
-			    if(imgSrc !== last){
-				  lastArrow.hide();
-				}
-		
-			  }
-			  
-			  if(imgSrc === last||typeof last == 'undefined'){
-			   	$(targetId).slideToggle(400);
-			  }
-			  
-			  else{
-	              if($(targetId).is(":hidden")){
-				     if($(lastTargetId).is(":visible")){
-					     $(lastTargetId).slideToggle(400);
-					 }
-			         $(targetId).slideToggle(400);
-			      }
-				  else{
-				   //just load pics
-				  }
-			  }
-
-			  $(this).parent().find('.arrow').toggle(); 			
-			 
-			  if(lastTopOffset!== $(this).offset().top+100){
-			    $('html,body').animate({scrollTop: $(this).offset().top+100}, 400);
-			  }  
-			  
-			  last = imgSrc;
-              lastArrow = $(this).parent().find('.arrow');
-              lastTargetId = targetId;
-            }
-			
-		  });
-
-		  $("div.container >div.content >div.main >div.row >div.Cell >a.close").on('click', function(event){
-		    event.preventDefault();
-
-			$(this).parent().parent().slideToggle(400);
-			lastArrow.hide();
-
-		  });
-
-           	$("div.container >div.content >div.main >div.row >div.Cell >div.thumbnail").hover(
-		        function(){
-				  if(!isLarger){
-				    var title = $(this).find('img').attr('data-title');
-					var content = $(this).find('img').attr('data-alt');
-					var buttonLink = $(this).find('img').attr('data-link');
-				    $(this).find('.description').find('h3').html(title);
-					$(this).find('.description').find('p').html(content);
-					$(this).find('.description').find('a').attr('href',buttonLink);
-				    $(this).find('.description').slideDown(250);
-				  }
-					//$(this).find('.description').css("height",$(this).find('img').height()+'px');
-					//$(this).find('.description').css("width",$(this).find('img').width()+'px');
-		        	
-
-		        },
-		        function(){
-				  if(!isLarger){
-		        	$(this).find('.description').slideUp(250);
-				  }
-		        }
-	       );
-		</script>
 
         <!-- ---------------- Custom Shader Code ------------------------ -->
         <script id="vertexShader" type="x-shader/x-vertex">
@@ -347,6 +215,51 @@
 
 			}
 
-		</script>		
+		</script>
+        <script>
+        if (window.matchMedia('(max-width: 768px)').matches){
+        	        console.log("smaller");
+        			normalButton()
+                               
+         }
+      	 if (window.matchMedia('(min-width: 768px)').matches){
+      	       		console.log("larger");
+      	            electricButton()
+   	       		
+        }
+		
+	    $(window).resize(function(){
+	    	if (window.matchMedia('(max-width: 768px)').matches)
+            {
+	    		console.log("smaller");
+				normalButton()
+               
+            }
+	    	if (window.matchMedia('(min-width: 768px)').matches)
+            {
+	    		console.log("larger");
+				electricButton()
+	    		
+	    	}
+	      });	
+
+          function electricButton(){
+		     var unityBtnClass = "unity biliboard electronic",
+			     meBtnClass = "me biliboard electronic",
+			     memoBtnClass = "memories biliboard electronic";
+		     $("div.container >a.unity").attr('class', unityBtnClass);
+			 $("div.container >a.me").attr('class', meBtnClass);
+			 $("div.container >a.memories").attr('class', memoBtnClass);
+		  }
+
+          function normalButton(){
+		     var unityBtnClass = "unity button homepagebtn",
+			     meBtnClass = "me button homepagebtn",
+			     memoBtnClass = "memories button homepagebtn";
+		     $("div.container >a.unity").attr('class', unityBtnClass);
+			 $("div.container >a.me").attr('class', meBtnClass);
+			 $("div.container >a.memories").attr('class', memoBtnClass);
+		  }			  
+        </script>		
 	</body>
 </html>
