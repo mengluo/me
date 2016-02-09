@@ -617,9 +617,13 @@
 		        }
 	       );
 		   
-		   $('div.modal').find('button').click(function () {
+	    $('div.modal').find('button').click(function () {
                 $(this).parent().parent().find('div.modal-body >iframe').attr('src', videoSRC)
 
+            });
+            
+            $('div.modal').on('hidden.bs.modal', function () {
+                $(this).parent().parent().find('div.modal-body >iframe').attr('src', videoSRC)
             });
 
 
