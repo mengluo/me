@@ -623,7 +623,7 @@
             });
             
             $('div.modal').on('hidden.bs.modal', function () {
-                $(this).parent().parent().find('div.modal-body >iframe').attr('src', videoSRC)
+                $(this).find('div.modal-body >iframe').attr('src', videoSRC)
             });
 
 
